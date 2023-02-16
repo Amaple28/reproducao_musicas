@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2020/09/25/02/56/music-5600363_960_720.png" type="image/x-icon">
+</head>
+
+<body id="body">
+    <audio controls id="" class="audio" src="" volume=""></audio>
+    <img src="capa_heart_to_heart.webp" alt="">
+
+    <h4>Heart To Heart</h4>
+    <p>Mac DeMarco</p>
+       
+</body>
+    <div style="display:flex;">
+        <!-- <button class="btn" onclick="playAudio()"> Play </button> -->
+        <button type="button" id="anterior" class="play" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+            data-bs-title="Anterior" >
+            <i class="fas fa-step-backward "></i>
+        </button>
+
+        <button type="button" class="play" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+            data-bs-title="Play" id="play" onclick="playAudio()">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <button type="button" class="pause" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+            data-bs-title="Pausar" id="pause"  onclick="playAudio()">
+            <i class="fas fa-pause"></i>
+        </button>
+
+        <button type="button" class="play" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+            data-bs-title="Próxima" >
+            <i class="fas fa-step-forward"></i>
+        </button>
+    </div>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script>
+    // meuStorage = localStorage;
+
+	// const audios = document.getElementsByClassName("audio")
+    // const thumbs = document.getElementsByTagName("img")
+    // const names = document.getElementsByTagName("h4")
+
+	// let loopIndex = 0
+    // if(localStorage.getItem('currentTime') != 0) {
+    //     loopIndex = Number(localStorage.getItem('loopIndex'))
+    //     if(loopIndex > audios.length - 1) {
+    //         loopIndex = 0
+    //     }
+    //     audios[loopIndex].currentTime = Number(localStorage.getItem('currentTime'))
+    //     names[loopIndex].style.display = "block"
+    //     thumbs[loopIndex].style.display = "block"
+
+    // }
+
+    
+    
+	// function loop() {
+    //     setTimeout(() => {
+    //         const audio = audios[loopIndex]
+    //         localStorage.setItem('currentTime', audio.currentTime)
+    //         localStorage.setItem('loopIndex', loopIndex)
+
+	// 		if(audio.currentTime == audio.duration) {
+	// 			loopIndex += 1;
+
+	// 			if(audios[loopIndex]) {
+	// 				audios[loopIndex].pause();
+	// 				audios[loopIndex].load();
+	// 				audios[loopIndex].play();
+	// 			}
+	// 			else {
+    //                 loopIndex = 0;
+    //                 audios[loopIndex].play();
+	// 			}
+	// 		}
+			
+    //         loop();
+
+	// 	}, 100);
+	// }
+	// loop();
+
+    function playAudio() {
+        var buttonPlay = document.getElementById("play");
+        var buttonPause = document.getElementById("pause");
+        // setVolume(loopIndex);
+
+        if(buttonPlay.style.display === "block") {
+            // audios[loopIndex].play();
+            buttonPlay.style.display = "none";
+            buttonPause.style.display = "block";
+        }
+        else {
+            // audios[loopIndex].pause();
+            buttonPlay.style.display = "block";
+            buttonPause.style.display = "none";
+        }
+
+        
+
+        // if (buttonPlay.style.display === "none") {
+        //     buttonPlay.style.display = "block";
+        //     buttonPause.style.display = "none";
+        // } else {
+        //     buttonPlay.style.display = "none";
+        //     buttonPause.style.display = "block";
+        // }
+	}
+
+    // function playNext() {
+    //     audios[loopIndex].pause();
+    //     loopIndex += 1;
+    //     thumbs[loopIndex-1].style.display = "none"
+    //     names[loopIndex-1].style.display = "none"
+    //     thumbs[loopIndex].style.display = "block"
+    //     names[loopIndex].style.display = "block"
+    //     playAudio();
+
+    //     var buttonPlay = document.getElementById("play");
+    //     var buttonPause = document.getElementById("pause");
+    //     buttonPlay.style.display = "none";
+    //     buttonPause.style.display = "block";
+
+    // }
+
+    // function playPrevious() {
+    //     audios[loopIndex].pause();
+    //     loopIndex -= 1;
+    //     thumbs[loopIndex+1].style.display = "none"
+    //     names[loopIndex+1].style.display = "none"
+    //     thumbs[loopIndex].style.display = "block"
+    //     names[loopIndex].style.display = "block"
+    //     playAudio();
+
+    //     var buttonPlay = document.getElementById("play");
+    //     var buttonPause = document.getElementById("pause");
+    //     buttonPlay.style.display = "none";
+    //     buttonPause.style.display = "block";
+    // }
+
+    // function setVolume(index){
+    //     try{
+    //         volume = audios[index].getAttribute('volume');
+    //         console.log("Volume: "+volume);
+    //         audios[index].volume = volume / 100;
+    //     }catch(e){
+    //         console.log(e)
+    //     }
+    // }
+
+    // nao tirar essas const, eleas são necessárias para o tooltip funcionar
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        var body = document.getElementById("body");
+
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        body.style.background = "linear-gradient(10deg, " + color + ", #000000)";
+    }
+
+    getRandomColor();
+    setInterval(getRandomColor, 10000);
+
+</script>

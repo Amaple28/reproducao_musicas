@@ -1,0 +1,74 @@
+.audio{
+    display: none;
+}
+
+body{
+
+    background-color: #f1f1f1;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    vertical-align: middle;
+    background: linear-gradient(10deg, rgb(57, 57, 63) 0%, rgb(86, 86, 90) 0%, rgb(25, 23, 23) 100%);
+    max-width: 100vw;
+}
+
+/* CAPA DA MUSICA */
+img{
+    border-radius: 5%;
+    margin: 20px;
+    max-width: 90vw;
+    max-height: 50vh;
+}
+
+/* NOME MUSICA */
+h4{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    color: #fff;
+    flex-wrap: wrap;
+    max-width: 80%;
+    text-align: center;
+}
+
+/* NOME ARTISTA */
+p{
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 0;
+    color: #b7b0b0;
+}
+
+/* CONTROLES */
+.pause{
+    display: none;
+}
+
+.play, .pause{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.play:hover, .pause:hover{
+box-shadow: 0 0 10px #000000;
+transition: 0.3s;
+}
+
+i{
+    color: #ffffff;
+    font-size: 30px;
+    margin: 10px;
+}
